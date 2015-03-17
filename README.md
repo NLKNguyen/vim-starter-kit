@@ -5,8 +5,48 @@ Get your Vim ready for real coding within a minute with Vim Starter Kit. Whether
 
 Each package contains all preinstalled plugin(s) and therefore can be installed without  Internet connection once you obtain a local copy of this project.
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-[TOC]
+- [1 Minute Installation](#1-minute-installation)
+  - [Download](#download)
+  - [Install](#install)
+    - [Basic package](#basic-package)
+    - [Extended package](#extended-package)
+- [Basic Package](#basic-package)
+  - [Preset Common Settings](#preset-common-settings)
+  - [Preinstalled  Plugin Manager](#preinstalled--plugin-manager)
+  - [Preloaded Color Scheme](#preloaded-color-scheme)
+- [Extended Package](#extended-package)
+  - [Preinstalled  Plugins](#preinstalled--plugins)
+    - [Comment Toggling](#comment-toggling)
+    - [Text Surrounding](#text-surrounding)
+    - [Text Alignment](#text-alignment)
+    - [Source Code Outline Viewer](#source-code-outline-viewer)
+    - [Fuzzy File Finder](#fuzzy-file-finder)
+    - [Directory Browser](#directory-browser)
+    - [Doxygen Comment](#doxygen-comment)
+    - [Syntax Highlighting Enhancement](#syntax-highlighting-enhancement)
+  - [Commonly Used Features](#commonly-used-features)
+  - [Command Line Interaction](#command-line-interaction)
+    - [Execute Any Script](#execute-any-script)
+    - [Set Command Line Arguments](#set-command-line-arguments)
+    - [Run Make Command (Makefile)](#run-make-command-makefile)
+    - [Use QuickFix (Debug Window)](#use-quickfix-debug-window)
+    - [Compile & Run C/C++ code and Test with Valgrind](#compile-&-run-cc-code-and-test-with-valgrind)
+  - [](#)
+  - [](#-1)
+    - [Compile & Run Lex/Flex and Yacc/Bison code](#compile-&-run-lexflex-and-yaccbison-code)
+    - [Compile & Run Assembly code](#compile-&-run-assembly-code)
+    - [Run DTrace and SystemTap](#run-dtrace-and-systemtap)
+  - [](#-2)
+    - [Work with PlantUML](#work-with-plantuml)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+
+
 #1 Minute Installation
 This Vim Starter Kit includes  [Vim Kit Installer](https://github.com/NLKNguyen/vim-kit-installer) that provides a quick and easy interface for loading and saving Vim configurations.
 ##Download
@@ -67,6 +107,7 @@ For each of these plugins, there is likely a valid alternative plugin, but you c
 
 ###Comment Toggling
 **Vim-Commentary** by Tim Pope https://github.com/tpope/vim-commentary
+
 Toggle comment line or block of code
 | Mode   | Default Keys | Action
 | ----   | :--         | ------
@@ -83,6 +124,7 @@ Examples for `gc`[target]:
 ###Text Surrounding
 **Vim-Surround** by Tim Pope https://github.com/tpope/vim-surround
 Surrounding text with parentheses, brackets, quotes, XML tags, and more
+
 | Mode   | Example | Action    
 | ----   | :---    | ------    
 | Visual | `S"`    | Surround the selected text with `"`
@@ -94,6 +136,7 @@ See the Github page for more examples.
 ###Text Alignment
 **Tabular** by Matt Wozniski https://github.com/godlygeek/tabular
 Common text alignment usages with customized keys for both Normal and Visual modes. For non-trivial usecases, see the Github page.
+
 | Keys   | Action                   | Note
 | ----   | :-----                   | ---
 | `,a=`  | Align text based on `=`  | `:Tabularize/=`
@@ -111,6 +154,7 @@ Common text alignment usages with customized keys for both Normal and Visual mod
 ###Source Code Outline Viewer
 **Tagbar** by Jan Larres https://github.com/majutsushi/tagbar/
 Provides a sidebar that displays the ctags-generated tags of the current file, ordered by their scope. Required *ctags* installed on the system.
+
 | Keys | Action                                 | Note
 | ---- | :-----                                 | ---
 | `,T` | Toggle Tagbar                          | `:TagbarToggle`
@@ -119,11 +163,13 @@ Provides a sidebar that displays the ctags-generated tags of the current file, o
 ###Fuzzy File Finder
 **CtrlP** by Kien https://github.com/kien/ctrlp.vim
 Full path fuzzy file, buffer, mru, tag, ... finder
+
 | Mode   | Default Key | Action
 | ----   | :---:       | ------
 | Normal | `<c-p>`     | Open CtrlP window
 
 When CtrlP window is opened:
+
 | Default Keys | Action
 | :---:        | ------
 | `<c-c>`      | Close CtrlP window 
@@ -140,6 +186,7 @@ See the Github page for more information.
 ###Directory Browser
 **vim-vinegar** by Tim Pope https://github.com/tpope/vim-vinegar
 Enhances the Vim's built-in directory browser *netrw*
+
 | Mode   | Keys | Action
 | ----   | :--- | ------
 | Normal | `-`  | Open directory browser on the current buffer
@@ -149,11 +196,13 @@ See the Github page for more information.
 ###Doxygen Comment
 **Doxygen Toolkit** by Mathias Lorente https://github.com/mrtazz/DoxygenToolkit.vim
 Add comment in Doxygen format so that you can generate documentation from your code using *Doxygen* program
+
 | Command      | Action
 | ----         | ------
 | `:Dox`       | Add Function/Class Comment
 | `:DoxAuthor` | Add Author Comment and Version
 | `:DoxLic`    | Add License Comment
+
 In your **~/.vimrc**, set your name and license to be added in automatically
 ```
 let g:DoxygenToolkit_authorName="[Your Name]"
@@ -178,7 +227,6 @@ These syntax highlighting plugins enhance upon Vim built-in syntax highlighting.
 
 ##Commonly Used Features
 
-
 | Keys       | Action
 | ----:      | ---
 | `,,`       | Update (save) the current file
@@ -191,6 +239,7 @@ These syntax highlighting plugins enhance upon Vim built-in syntax highlighting.
 | `<space>?` | Show where the current file is located
 
 **Easier Navigation Between Buffers**
+
 | Keys  | Action                | Default
 | ----: | ---                   | ---
 | `[b`  | Go to previous buffer | `:bprevious`
@@ -199,6 +248,7 @@ These syntax highlighting plugins enhance upon Vim built-in syntax highlighting.
 | `]B`  | Go to last buffer     | `:blast`
 
 **Easier Navigation Between Split Windows**
+
 | Keys    | Action                      | Default
 | ----:   | ---                         | ---
 | `<c-j>` | Jump to window above        | `<c-w>j`
@@ -210,6 +260,7 @@ These syntax highlighting plugins enhance upon Vim built-in syntax highlighting.
 
 
 **Easier Navigation Between Tabs**
+
 | Keys  | Action             | Default
 | ----: | ---                | ---
 | `` ,` `` | Open new tab       | `:tabnew`
@@ -231,6 +282,7 @@ These syntax highlighting plugins enhance upon Vim built-in syntax highlighting.
 ##Command Line Interaction
 ###Execute Any Script
 Any script that has an interpreter line at the top, e.g. `#!/usr/sbin/dtrace -s`, can be executed as an executable file, e.g. `./iosnoop.d`, if the file has execution permission.
+
 | Keys             | Action(s)                                     | Note                                              |
 | ---------------: | ----------------------------                  | --------------------------                        |
 | `<F9>` or `,rr`  | Update & Execute the current file             | Require file execution permission                 |
@@ -249,9 +301,10 @@ To temporarily change the command line arguments for the current Vim session
 
 ###Run Make Command (Makefile)
 Make is a great build tool for sophisticated programs that pass the 'toy' level. You write the build instructions to a 'Makefile', and Make will look into it to execute. 
+
 | Keys             | Action(s)                                  | Note           |
 | ---------------: | ----------------------------               | -------------  |
-| `<F7>` or `,ma`  | Save all, Run shell command `make`  | :!make        |
+| `<F7>` or `,ma`  | Save all, Run shell command `make`         | :!make         |
 | `<F6>` or `,mc`  | Save all, Run shell command `make clean`   | :!make clean   |
 | `<F5>` or `,mr`  | Save all, Run shell command `make run`     | :!make run     |
 | `,md`            | Save all, Run shell command `make debug`   | :!make debug   |
