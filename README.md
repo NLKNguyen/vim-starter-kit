@@ -1,5 +1,4 @@
-Vim Starter Kit
-==============
+#Vim Starter Kit
 
 Get your Vim ready for real coding within a minute with Vim Starter Kit. Whether you just begin your Vim journey or has been into it for awhile, this starter kit can save you a great deal of time for configuration to set your Vim up as a real coding environment.
 
@@ -35,12 +34,9 @@ Each package contains all preinstalled plugin(s) and therefore can be installed 
     - [Run Make Command (Makefile)](#run-make-command-makefile)
     - [Use QuickFix (Debug Window)](#use-quickfix-debug-window)
     - [Compile & Run C/C++ code and Test with Valgrind](#compile-&-run-cc-code-and-test-with-valgrind)
-  - [](#)
-  - [](#-1)
     - [Compile & Run Lex/Flex and Yacc/Bison code](#compile-&-run-lexflex-and-yaccbison-code)
     - [Compile & Run Assembly code](#compile-&-run-assembly-code)
     - [Run DTrace and SystemTap](#run-dtrace-and-systemtap)
-  - [](#-2)
     - [Work with PlantUML](#work-with-plantuml)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -109,6 +105,7 @@ For each of these plugins, there is likely a valid alternative plugin, but you c
 **Vim-Commentary** by Tim Pope https://github.com/tpope/vim-commentary
 
 Toggle comment line or block of code
+
 | Mode   | Default Keys | Action
 | ----   | :--         | ------
 | Normal | `gcc`        | Toggle comment current line
@@ -123,6 +120,7 @@ Examples for `gc`[target]:
 
 ###Text Surrounding
 **Vim-Surround** by Tim Pope https://github.com/tpope/vim-surround
+
 Surrounding text with parentheses, brackets, quotes, XML tags, and more
 
 | Mode   | Example | Action    
@@ -135,11 +133,12 @@ See the Github page for more examples.
 
 ###Text Alignment
 **Tabular** by Matt Wozniski https://github.com/godlygeek/tabular
+
 Common text alignment usages with customized keys for both Normal and Visual modes. For non-trivial usecases, see the Github page.
 
 | Keys   | Action                   | Note
 | ----   | :-----                   | ---
-| `,a=`  | Align text based on `=`  | `:Tabularize/=`
+| `,a=`  | Align text based on `=`  | `:Tabularize /=`
 | `,a:`  | Align text based on `:`  |
 | `,a,`  | Align text based on `,`  |
 | `,a(`  | Align text based on `(`  |
@@ -153,6 +152,7 @@ Common text alignment usages with customized keys for both Normal and Visual mod
 
 ###Source Code Outline Viewer
 **Tagbar** by Jan Larres https://github.com/majutsushi/tagbar/
+
 Provides a sidebar that displays the ctags-generated tags of the current file, ordered by their scope. Required *ctags* installed on the system.
 
 | Keys | Action                                 | Note
@@ -162,6 +162,7 @@ Provides a sidebar that displays the ctags-generated tags of the current file, o
 
 ###Fuzzy File Finder
 **CtrlP** by Kien https://github.com/kien/ctrlp.vim
+
 Full path fuzzy file, buffer, mru, tag, ... finder
 
 | Mode   | Default Key | Action
@@ -185,6 +186,7 @@ See the Github page for more information.
 
 ###Directory Browser
 **vim-vinegar** by Tim Pope https://github.com/tpope/vim-vinegar
+
 Enhances the Vim's built-in directory browser *netrw*
 
 | Mode   | Keys | Action
@@ -195,6 +197,7 @@ See the Github page for more information.
 
 ###Doxygen Comment
 **Doxygen Toolkit** by Mathias Lorente https://github.com/mrtazz/DoxygenToolkit.vim
+
 Add comment in Doxygen format so that you can generate documentation from your code using *Doxygen* program
 
 | Command      | Action
@@ -285,8 +288,8 @@ Any script that has an interpreter line at the top, e.g. `#!/usr/sbin/dtrace -s`
 
 | Keys             | Action(s)                                     | Note                                              |
 | ---------------: | ----------------------------                  | --------------------------                        |
-| `<F9>` or `,rr`  | Update & Execute the current file             | Require file execution permission                 |
-| `<F8>` or `,sr`  | Update & Execute the current file with `sudo` | Require root password & file execution permission |
+| `<F9>`<br>or`,rr`  | Update & Execute the current file             | Require file execution permission                 |
+| `<F8>`<br>or`,sr`  | Update & Execute the current file with `sudo` | Require root password & file execution permission |
 
 ###Set Command Line Arguments
 The command line arguments can be set to automatically pass right behind the program execution command. This is a convenient way to not having to repeat writing arguments manually for testing purpose.
@@ -344,20 +347,20 @@ let CLibrary=""
 To temporarily change it for the current Vim session `:let CCompile="[Your Choice]"`
 
 The following keys only apply when the current buffer is a C file.
-| Keys              | Action(s)                                                                                                                                                                 |
-| ----:             | -----------------------                                                                                                                                                   |
-| `<F9>`<br>or`,rr` | Update, Compile, and Run the current C file <br>Note: only work if the whole program contained within the file.<br>~ `[CCompile] filename.c [CLibrary] && ./a.out [args]` |
-| `,cc`             | Update and Compile the current C file into an object file <br>~ `[CCompile] -c filename.c`                                                                                |
-| `,CC`             | Save all, Compile all \*.c files in current directory into \*.o <br>~ `[CCompile] -c *.c`                                                                                 |
-| `,la`             | Link all \*.o object files in current directory into  an executable file a.out <br>~ `[CCompile] *.o [CLibrary]`                                                          |
-| `,ra`             | Run the executable file a.out <br>Similar to `./a.out [args]`                                                                                                             |
-| `,lr`             | Shorthand for `,la` then `,ra`                                                                                                                                            |
-| `,clr`            | Shorthand for `,cc` then `,la` then `,ra`                                                                                                                                 |
-| `,Clr`            | Shorthand for `,CC` then `,la` then `,ra`                                                                                                                                 |
-| `,rm`             | Remove object files  and a.out `rm -f *.o *.h.gch a.out`                                                                                                                  |
+
+| Keys              | Action(s)
+| ----:             | -----------------------
+| `<F9>`<br>or`,rr` | Update, Compile, and Run the current C file <br>Note: only work if the whole program contained within the file.<br>~ `[CCompile] filename.c [CLibrary] && ./a.out [args]`
+| `,cc`             | Update and Compile the current C file into an object file <br>~ `[CCompile] -c filename.c`
+| `,CC`             | Save all, Compile all \*.c files in current directory into \*.o <br>~ `[CCompile] -c *.c`
+| `,la`             | Link all \*.o object files in current directory into  an executable file a.out <br>~ `[CCompile] *.o [CLibrary]`
+| `,ra`             | Run the executable file a.out <br>Similar to `./a.out [args]`
+| `,lr`             | Shorthand for `,la` then `,ra`
+| `,clr`            | Shorthand for `,cc` then `,la` then `,ra`
+| `,Clr`            | Shorthand for `,CC` then `,la` then `,ra`
+| `,rm`             | Remove object files  and a.out `rm -f *.o *.h.gch a.out`
 
 
-----------
 **C ++**
 
 > "In C++, it's harder to shoot yourself in the foot, but when you do, you blow off your whole leg."
@@ -372,22 +375,21 @@ To temporarily change it for the current Vim session `:let CppCompile="[Your Cho
 
 The following keys only apply when the current buffer is a Cpp file.
 
-| Keys              | Action(s)                                                                                                                                                          |
-| ----:             | -----------------------                                                                                                                                            |
-| `<F9>`<br>or`,rr` | Update, Compile, and Run the current C++ file <br>Note: only work if the whole program contained within the file.<br>~ `[CppCompile] filename.cpp && ./a.out [args]` |
-| `,cc`             | Update and Compile the current C file into an object file <br>~`[CppCompile] -c filename.cpp`                                                                        |
-| `,CC`             | Save all, Compile all \*.c files in current directory into \*.o <br>~`[CppCompile] -c *.cpp`                                                                         |
-| `,la`             | Link all \*.o object files in current directory into  an executable file a.out <br>~ `[CppCompile] *.o`                                                              |
-| `,ra`             | Run the executable file a.out ~ `./a.out [args]`                                                                                                                   |
-| `,lr`             | Shorthand for `,la` then `,ra`                                                                                                                                     |
-| `,clr`            | Shorthand for `,cc` then `,la` then `,ra`                                                                                                                          |
-| `,Clr`            | Shorthand for `,CC` then `,la` then `,ra`                                                                                                                          |
-| `,rm`             | Remove object files  and a.out `rm -f *.o *.h.gch a.out`                                                                                                           |
+| Keys              | Action(s)
+| ----:             | -----------------------
+| `<F9>`<br>or`,rr` | Update, Compile, and Run the current C++ file <br>Note: only work if the whole program contained within the file.<br>~ `[CppCompile] filename.cpp && ./a.out [args]`
+| `,cc`             | Update and Compile the current C file into an object file <br>~`[CppCompile] -c filename.cpp`
+| `,CC`             | Save all, Compile all \*.c files in current directory into \*.o <br>~`[CppCompile] -c *.cpp`
+| `,la`             | Link all \*.o object files in current directory into  an executable file a.out <br>~ `[CppCompile] *.o`
+| `,ra`             | Run the executable file a.out ~ `./a.out [args]`
+| `,lr`             | Shorthand for `,la` then `,ra`
+| `,clr`            | Shorthand for `,cc` then `,la` then `,ra`
+| `,Clr`            | Shorthand for `,CC` then `,la` then `,ra`
+| `,rm`             | Remove object files  and a.out `rm -f *.o *.h.gch a.out`
 
 <br>
 *Reminder*: you can set command line arguments for your program to execute with. See '*Set Command Line Arguments*'
 
-----------
 
 **Valgrind** is a powerful tool for detecting many memory management and threading bugs, and profile your programs in detail. It is a must-have/must-use for C/C++ programmers.
 
@@ -397,7 +399,8 @@ let Valgrind="valgrind --leak-check=full --show-leak-kinds=all"
 ```
 To temporarily change it for the current Vim session `:let Valgrind="[Your Choice]"`
 
-The following key only applies when the current buffer is a C/C++ file.
+The following key only applies when the current buffer is a C/C++/Lex/Flex/Yacc/Bison file.
+
 | Key   | Action(s)                                 | Note
 | ---:  | ---                                       | ---                                        |
 | `,va` | Run Valgrind on the executable file a.out | Require *valgrind* installed on the system |
@@ -452,18 +455,21 @@ let MIPS="spim -file"
 let GAS="gcc"
 ```
 **NASM**
+
 | Key             | Action(s)                                 
 | ---:            | ---                                                 
 | `<F9>` or `,rr` | Update then Compile, Link, and Run the current NASM file <br> `[NASM] thisfile.asm` then `ld thisfile.o` then `./a.out [args]`
 | `,cc` | Update then Compile `[NASM] thisfile.asm`  
 
 **GAS**
+
 | Key             | Action(s)                                 
 | ---:            | ---                                                 
 | `<F9>` or `,rr` | Update then Compile & Link, and Run the current GAS file <br> `[GAS] thisfile.s` then `./a.out [args]`
 | `,cc` | Update then Compile `[GAS] -c thisfile.s`  
 
 **MIPS**
+
 | Key             | Action(s)                                 
 | ---:            | ---                                                 
 | `<F9>` or `,rr` | Update then Run the current MIPS file<br> `[MIPS] thisfile.S [args]`
@@ -487,10 +493,13 @@ let DTrace="sudo dtrace -s"
 let SystemTap="sudo stap"
 ```
 To temporarily change any of them for the current Vim session 
+
 `:let DTrace="[Your Choice]"`
+
 `:let SystemTap="[Your Choice]"`
 
 **Run DTrace**
+
 | Keys             | Action(s)                                     | Note                         |
 | ---------------: | ----------------------------                  | --------------------------   |
 | `<F9>` or `,rr`  | Update & Run DTrace on the current .d file    | Require DTrace enable system |
@@ -498,13 +507,12 @@ To temporarily change any of them for the current Vim session
 
 
 **Run SystemTap**
+
 | Keys              | Action(s)                                       | Note                            |
 | ----------------: | ----------------------------                    | --------------------------      |
 | `<F9>` or `,rr`   | Update & Run SystemTap on the current .stp file | Require SystemTap enable system |
 | `<F8>` or `,sr`   | Update & Execute the current file with `sudo`   | See *Execute Any Script*        |
 
-
-----------
 
 
 ***For DLang programmers***:
@@ -521,21 +529,16 @@ let PlantUML="java jar ~/PlantUML/plantuml.jar"
 ```
 Change the path to *plantuml.jar* to your preferred location. Your system also needs to have Java installed.
 
-| Keys | Action(s)                    |
- -------------------: | ---------------------------- |
-| `,,`       | Update the current PlantUML file and generate a PNG image from it |
-| `<F9>` or `,rr`      | Update the current PlantUML file and generate a SVG image from it |
+| Keys            | Action(s)
+| ---:            | --------
+| `,,`            | Update the current PlantUML file and generate a PNG image from it
+| `<F9>` or `,rr` | Update the current PlantUML file and generate a SVG image from it
 
 If you want live preview, use a image viewer that doesn't block the image file from being overwritten and also supports auto reload the currently opened file when it changes. GNU Image Viewer that comes with Ubuntu OS is one example.
 
 
 
 <br><br>
-
-
-**Table of contents**
-
-[TOC]
 
 > **Author**: Nguyen Nguyen (NLKNguyen@MSN.com)
 
