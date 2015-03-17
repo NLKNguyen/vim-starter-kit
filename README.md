@@ -6,7 +6,7 @@ Each package contains all preinstalled plugin(s) and therefore can be installed 
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+**Table of Contents**
 
 - [1 Minute Installation](#1-minute-installation)
   - [Download](#download)
@@ -334,7 +334,7 @@ Make is a great build tool for sophisticated programs that pass the 'toy' level.
 
 Below are convenient shortcuts to work with small C/C++ programs. For more complex program, use Makefile.
 
-**C **
+**C**
 
 > "C is quirky, flawed, and an enormous success."
 > --- Dennis M. Ritchie (C language creator)
@@ -500,18 +500,18 @@ To temporarily change any of them for the current Vim session
 
 **Run DTrace**
 
-| Keys             | Action(s)                                     | Note                         |
-| ---------------: | ----------------------------                  | --------------------------   |
-| `<F9>` or `,rr`  | Update & Run DTrace on the current .d file    | Require DTrace enable system |
-| `<F8>` or `,sr`  | Update & Execute the current file with `sudo` | See *Execute Any Script*     |
+| Keys             | Action(s)                                     | Note
+| ---------------: | ----------------------------                  | --------------------------
+| `<F9>` or `,rr`  | Update & Run DTrace on the current .d file    | Require DTrace enable system
+| `<F8>` or `,sr`  | Update & Execute the current file with `sudo` | See *Execute Any Script*
 
 
 **Run SystemTap**
 
-| Keys              | Action(s)                                       | Note                            |
-| ----------------: | ----------------------------                    | --------------------------      |
-| `<F9>` or `,rr`   | Update & Run SystemTap on the current .stp file | Require SystemTap enable system |
-| `<F8>` or `,sr`   | Update & Execute the current file with `sudo`   | See *Execute Any Script*        |
+| Keys            | Action(s)                                       | Note
+| ---:            | ------                                          | -----
+| `<F9>` or `,rr` | Update & Run SystemTap on the current .stp file | Require SystemTap
+| `<F8>` or `,sr` | Update & Execute the current file with `sudo`   | See *Execute Any Script*
 
 
 
