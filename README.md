@@ -346,12 +346,15 @@ Below are convenient shortcuts to work with small C/C++ programs. For more compl
 > 
 > --- Dennis M. Ritchie (C language creator)
 
-Default **C** compiler & compiler flags are set in ~/.vimrc
+Default **C** compiler & compiler flags and linking library are set in ~/.vimrc
 ```
 let CCompile="gcc -g -Wall -std=gnu99"
 let CLibrary=""
 ```
-To temporarily change it for the current Vim session `:let CCompile="[Your Choice]"`
+To temporarily change them for the current Vim session 
+
+`:let CCompile="[Your Choice]"`
+`:let CLibrary="[Your Choice]"`
 
 The following keys only apply when the current buffer is a C file.
 
@@ -375,20 +378,24 @@ The following keys only apply when the current buffer is a C file.
 > --- Bjarne Stroustrup (C++ creator)
 
 
-Default **C++** compiler & compiler flags are set in ~/.vimrc
+Default **C++** compiler & compiler flags and linking library are set in ~/.vimrc
 ```
 let CppCompile="g++ -g -Wall -std=c++11"
+let CppLibrary=""
 ```
-To temporarily change it for the current Vim session `:let CppCompile="[Your Choice]"`
+To temporarily change them for the current Vim session 
+
+`:let CppCompile="[Your Choice]"`
+`:let CppLibrary="[Your Choice]"`
 
 The following keys only apply when the current buffer is a Cpp file.
 
 | Keys              | Action(s)
 | ----:             | -----------------------
-| `<F9>`<br>or`,rr` | Update, Compile, and Run the current C++ file <br>Note: only work if the whole program contained within the file.<br>~ `[CppCompile] filename.cpp && ./a.out [args]`
+| `<F9>`<br>or`,rr` | Update, Compile, and Run the current C++ file <br>Note: only work if the whole program contained within the file.<br>~ `[CppCompile] filename.cpp [CppLibrary] && ./a.out [args]`
 | `,cc`             | Update and Compile the current C file into an object file <br>~`[CppCompile] -c filename.cpp`
 | `,CC`             | Save all, Compile all \*.c files in current directory into \*.o <br>~`[CppCompile] -c *.cpp`
-| `,la`             | Link all \*.o object files in current directory into  an executable file a.out <br>~ `[CppCompile] *.o`
+| `,la`             | Link all \*.o object files in current directory into  an executable file a.out <br>~ `[CppCompile] *.o [CppLibrary]`
 | `,ra`             | Run the executable file a.out ~ `./a.out [args]`
 | `,lr`             | Shorthand for `,la` then `,ra`
 | `,clr`            | Shorthand for `,cc` then `,la` then `,ra`
