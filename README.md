@@ -354,6 +354,7 @@ let CLibrary=""
 To temporarily change them for the current Vim session 
 
 `:let CCompile="[Your Choice]"`
+
 `:let CLibrary="[Your Choice]"`
 
 The following keys only apply when the current buffer is a C file.
@@ -386,6 +387,7 @@ let CppLibrary=""
 To temporarily change them for the current Vim session 
 
 `:let CppCompile="[Your Choice]"`
+
 `:let CppLibrary="[Your Choice]"`
 
 The following keys only apply when the current buffer is a Cpp file.
