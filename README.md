@@ -33,9 +33,9 @@ Each package contains all preinstalled plugin(s) and therefore can be installed 
     - [Set Command Line Arguments](#set-command-line-arguments)
     - [Run Make Command (Makefile)](#run-make-command-makefile)
     - [Use QuickFix (Debug Window)](#use-quickfix-debug-window)
-    - [Compile & Run C/C++ code and Test with Valgrind](#compile-&-run-cc-code-and-test-with-valgrind)
-    - [Compile & Run Lex/Flex and Yacc/Bison code](#compile-&-run-lexflex-and-yaccbison-code)
-    - [Compile & Run Assembly code](#compile-&-run-assembly-code)
+    - [Compile, Run C/C++ code and Test with Valgrind](#compile-run-cc-code-and-test-with-valgrind)
+    - [Compile, Run Lex/Flex and Yacc/Bison code](#compile-run-lexflex-and-yaccbison-code)
+    - [Compile, Run Assembly code](#compile-run-assembly-code)
     - [Run DTrace and SystemTap](#run-dtrace-and-systemtap)
     - [Work with PlantUML](#work-with-plantuml)
 
@@ -67,7 +67,7 @@ Basic package is consist of a set of minimalist yet essential settings, a preins
 ```
 
 ###Extended package
-[TODO: More documentation here]
+Extended package includes everything in Basic package, plus more functionalies. It comes with preinstalled plugins and some configurations that enhance Vim experience. It also provides a mechanism for easy, quickly invoking external programs from Vim.
 
 ```bash
 ./install.sh --load Extended
@@ -93,7 +93,6 @@ It comes with a copy of PaperColor theme designed by the same author of this kit
 
 
 #Extended Package
-[TODO: More documentation here]
 
 ##Preinstalled  Plugins
 These plugins have very minimal requirements. No compilation or extra software is required.  If your system can run Vim,  it can run these plugins. 
@@ -286,10 +285,17 @@ These syntax highlighting plugins enhance upon Vim built-in syntax highlighting.
 ###Execute Any Script
 Any script that has an interpreter line at the top, e.g. `#!/usr/sbin/dtrace -s`, can be executed as an executable file, e.g. `./iosnoop.d`, if the file has execution permission.
 
-| Keys             | Action(s)                                     | Note                                              |
-| ---------------: | ----------------------------                  | --------------------------                        |
-| `<F9>`<br>or`,rr`  | Update & Execute the current file             | Require file execution permission                 |
-| `<F8>`<br>or`,sr`  | Update & Execute the current file with `sudo` | Require root password & file execution permission |
+| Keys              | Action(s)                                     | Note                                              |
+| ---------------:  | ----------------------------                  | --------------------------                        |
+| `<F9>`<br>or`,rr` | Update & Execute the current file             | Require file execution permission                 |
+| `<F8>`<br>or`,sr` | Update & Execute the current file with `sudo` | Require root password & file execution permission |
+
+**To change file permission:**
+
+| Keys               | Action(s)                | Note                              |
+| ---------------:   | ------------------------ | --------------------------        |
+| `<F12>`<br>or`,+x` | Add execution permission | `sudo chmod a+x ` on current file
+| `,+a`              | Add all permissions      | `sudo chmod 777 ` on current file
 
 ###Set Command Line Arguments
 The command line arguments can be set to automatically pass right behind the program execution command. This is a convenient way to not having to repeat writing arguments manually for testing purpose.
@@ -330,13 +336,14 @@ Make is a great build tool for sophisticated programs that pass the 'toy' level.
 
 
 
-###Compile & Run C/C++ code and Test with Valgrind
+###Compile, Run C/C++ code and Test with Valgrind
 
 Below are convenient shortcuts to work with small C/C++ programs. For more complex program, use Makefile.
 
 **C**
 
 > "C is quirky, flawed, and an enormous success."
+> 
 > --- Dennis M. Ritchie (C language creator)
 
 Default **C** compiler & compiler flags are set in ~/.vimrc
@@ -364,6 +371,7 @@ The following keys only apply when the current buffer is a C file.
 **C ++**
 
 > "In C++, it's harder to shoot yourself in the foot, but when you do, you blow off your whole leg."
+> 
 > --- Bjarne Stroustrup (C++ creator)
 
 
@@ -406,7 +414,7 @@ The following key only applies when the current buffer is a C/C++/Lex/Flex/Yacc/
 | `,va` | Run Valgrind on the executable file a.out | Require *valgrind* installed on the system |
 
  
-###Compile & Run Lex/Flex and Yacc/Bison code
+###Compile, Run Lex/Flex and Yacc/Bison code
  Default **Lex/Flex** compiler & compiler flags are set in ~/.vimrc
 
 **Lex/Flex**
@@ -446,7 +454,7 @@ The following keys only apply when the current buffer is a Lex/Flex file.
 | `<F9>`<br>or`,rr` | Update, Compile, and Run the current Yacc/Bison file <br>Note: only work if the whole program contained within the file.<br>`[Yacc] filename.y` then<br> `[YaccCompile] thisfile.tab.c` then <br> `./a.out [args]`|
 | `,yy` | Update, Compile the current Yacc/Bison file with lex.yy.c file, then Run. Assume there is a lex.yy.c file generated from Lex/Flex.<br>`[Yacc] filename.y` then<br> `[YaccCompile] thisfile.tab.c lex.yy.c` then <br> `./a.out [args]`|
 | `,cc`             | Update and Compile the Lex/Flex file to C code <br>`[Yacc] filename.y`                                                             |
-###Compile & Run Assembly code
+###Compile, Run Assembly code
 
 Default assembler and flags  for **NASM**, **GAS**,  and **MIPS** are set in ~/.vimrc
 ```VimL
