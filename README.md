@@ -285,17 +285,17 @@ These syntax highlighting plugins enhance upon Vim built-in syntax highlighting.
 ###Execute Any Script
 Any script that has an interpreter line at the top, e.g. `#!/usr/sbin/dtrace -s`, can be executed as an executable file, e.g. `./iosnoop.d`, if the file has execution permission.
 
-| Keys              | Action(s)                                     | Note                                              |
-| ---------------:  | ----------------------------                  | --------------------------                        |
-| `<F9>`<br>or`,rr` | Update & Execute the current file             | Require file execution permission                 |
-| `<F8>`<br>or`,sr` | Update & Execute the current file with `sudo` | Require root password & file execution permission |
+| Keys             | Action(s)                                     | Note                                              |
+| ---------------: | ----------------------------                  | --------------------------                        |
+| `<F9>` or `,rr`  | Update & Execute the current file             | Require file execution permission                 |
+| `<F8>` or `,sr`  | Update & Execute the current file with `sudo` | Require root password & file execution permission |
 
 **To change file permission:**
 
-| Keys               | Action(s)                | Note                              |
-| ---------------:   | ------------------------ | --------------------------        |
-| `<F12>`<br>or`,+x` | Add execution permission | `sudo chmod a+x ` on current file
-| `,+a`              | Add all permissions      | `sudo chmod 777 ` on current file
+| Keys             | Action(s)                | Note                              |
+| ---------------: | ------------------------ | --------------------------        |
+| `<F12>` or `,+x` | Add execution permission | `sudo chmod a+x ` on current file
+| `,+a`            | Add all permissions      | `sudo chmod 777 ` on current file
 
 ###Set Command Line Arguments
 The command line arguments can be set to automatically pass right behind the program execution command. This is a convenient way to not having to repeat writing arguments manually for testing purpose.
