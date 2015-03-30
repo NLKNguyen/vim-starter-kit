@@ -53,7 +53,12 @@ Download the source code of this project to anywhere in your local
 git clone https://github.com/NLKNguyen/vim-starter-kit.git
 cd vim-starter-kit
 ```
-Later on, if you want to get updates from this project, just run `git pull` inside your local repo. 
+
+Later on, if you want to get updates from this project, just run the following commands inside your local repo:
+```
+git fetch --all
+git reset --hard origin/master
+```
 
 **Option 2**: Download the zip file of this repository and extract it
 ##Install
