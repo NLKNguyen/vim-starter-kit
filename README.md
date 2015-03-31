@@ -63,7 +63,7 @@ git reset --hard origin/master
 **Option 2**: Download the zip file of this repository and extract it
 ##Install
 *Optional*: If you have previous Vim settings in **~/.vim/** and **~/.vimrc** that you want to restore later, you can back them up using: `./install.sh --save myOldSettings`. 
-To restore: `./install.sh --load myOldSettings`
+<br>To restore later: `./install.sh --load myOldSettings`
 
 ###Basic package
 Basic package is consist of a set of minimalist yet essential settings, a preinstalled plugin manager, and a color scheme. This is opinionated-free, meaning it doesn't target any specific programming language or enforce any kind of workflow in Vim. You can think of it as a better Vim default.
