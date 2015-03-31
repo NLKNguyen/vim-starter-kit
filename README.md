@@ -78,6 +78,10 @@ Extended package includes everything in Basic package, plus more functionalies. 
 ./install.sh --load Extended
 ```
 
+<br>
+**Note:** if your system requires execution permission, re-run the installation command with `-s` flag at the end to let the installer uses `sudo` on certain operations.
+<br>For example: `./install.sh --load Extended -s`
+
 #Basic Package
 ##Preset Common Settings
 Common Vim settings are set and documented in the **.vimrc** file. They are usually the essential settings that are generally used and recommended by most experienced Vim users.
