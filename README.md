@@ -33,9 +33,11 @@ Each package contains all preinstalled plugin(s) and therefore can be installed 
     - [Set Command Line Arguments](#set-command-line-arguments)
     - [Run Make Command (Makefile)](#run-make-command-makefile)
     - [Use QuickFix (Debug Window)](#use-quickfix-debug-window)
-    - [Compile, Run C/C++ code and Test with Valgrind](#compile-run-cc-code-and-test-with-valgrind)
+    - [Compile, Run C/C++ code](#compile-run-cc-code)
     - [Compile, Run Lex/Flex and Yacc/Bison code](#compile-run-lexflex-and-yaccbison-code)
     - [Compile, Run Assembly code](#compile-run-assembly-code)
+    - [Debug with GDB and DDD](#debug-with-gdb-and-ddd)
+    - [Test with Valgrind](#test-with-valgrind)
     - [Run DTrace and SystemTap](#run-dtrace-and-systemtap)
     - [Work with PlantUML](#work-with-plantuml)
 
@@ -345,7 +347,7 @@ Make is a great build tool for sophisticated programs that pass the 'toy' level.
 
 
 
-###Compile, Run C/C++ code and Test with Valgrind
+###Compile, Run C/C++ code
 
 Below are convenient shortcuts to work with small C/C++ programs. For more complex program, use Makefile.
 
@@ -415,21 +417,6 @@ The following keys only apply when the current buffer is a Cpp file.
 
 <br>
 *Reminder*: you can set command line arguments for your program to execute with. See '*Set Command Line Arguments*'
-
-
-**Valgrind** is a powerful tool for detecting many memory management and threading bugs, and profile your programs in detail. It is a must-have/must-use for C/C++ programmers.
-
-Default **Valgrind** command and flags are set in ~/.vimrc
-```
-let Valgrind="valgrind --leak-check=full --show-leak-kinds=all"
-```
-To temporarily change it for the current Vim session `:let Valgrind="[Your Choice]"`
-
-The following key only applies when the current buffer is a C/C++/Lex/Flex/Yacc/Bison file.
-
-| Key   | Action(s)                                 | Note
-| ---:  | ---                                       | ---                                        |
-| `,va` | Run Valgrind on the executable file a.out | Require *valgrind* installed on the system |
 
  
 ###Compile, Run Lex/Flex and Yacc/Bison code
@@ -510,6 +497,57 @@ This convention is purely subjective, so if you use a different Assembly or have
 
 You can manually set the correct file type for the current buffer so that Vim can use the correct syntax highlighting, for example `:set filetype=masm`. 
 However, Vim has a way to handle  this semi-automatically,  which is to have a declaration line `asmsyntax=nasm` on the top of your Assembly file. Replace "nasm" with the name of the real assembly syntax.  This line must be one of the first five lines in the file.  No non-white text must be immediately before or after this text, for example `; asmsyntax=tasm ;` or `# asmsyntax=gas  #` depending on the symbol for comment in the language. After you put this declaration in for the first time, you need to reload the file. If you use this method, every Assembly file you work on needs to have the declaration line, and you have to remove/comment out the auto commands above.
+
+### Debug with GDB and DDD
+**GDB** and **DDD** are one of the most popular debugging tool in Linux/UNIX
+Default **GDB** and **DDD** commands are set in ~/.vimrc
+```
+let GDB="gdb"
+let DDD="ddd"
+```
+
+To temporarily change them for the current Vim session 
+
+`:let GDB="[Your Choice]"`
+
+`:let DDD="[Your Choice]"`
+
+
+| Key    | Action(s)
+| ---:   | ---
+| `,gdb` | Run `[GDB] ./a.out`
+| `,ddd` | Run `[DDD] ./a.out`
+
+### Test with Valgrind
+**Valgrind** is a powerful tool for detecting many memory management and threading bugs, and profile your programs in detail. It is a must-have/must-use for C/C++ programmers.
+
+Default **Valgrind** commands and flags are set in ~/.vimrc
+```
+let Valgrind="valgrind --leak-check=full --show-leak-kinds=all"
+
+let Cachegrind="valgrind --tool=cachegrind --branch-sim=yes --cachegrind-out-file=cachegrind.out"
+
+let Callgrind="valgrind --tool=callgrind --callgrind-out-file=callgrind.out"
+let CallgrindViewer="kcachegrind"
+
+let Massif="valgrind --tool=massif --time-unit=B --massif-out-file=massif.out"
+let MassifViewer="ms_print"
+
+let Helgrind="valgrind --tool=helgrind"
+```
+
+To temporarily change any of them for the current Vim session for example `:let Valgrind="[Your Choice]"`
+
+The following key only applies when the current buffer is a C/C++/Lex/Flex/Yacc/Bison file.
+Require *valgrind* installed on the system. If you want to use the Callgrind graph viewer *kcachegrind*, you need to install it.
+
+| Key    | Action(s)
+| ---:   | ---
+| `,val` | Run Valgrind with the default tool **memcheck** on the executable file a.out
+| `,vac` | Run Valgrind with the tool **cachegrind** on the executable file a.out
+| `,vak` | Run Valgrind with the tool **callgrind** on the executable file a.out and use *kcachegrind* to visualize
+| `,vam` | Run Valgrind with the tool **massif** on the executable file a.out an print out the graph in the terminal using *ms_print*
+| `,vah` | Run Valgrind with the tool **hellgrind** on the executable file a.out
 
 
 ###Run DTrace and SystemTap
