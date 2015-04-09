@@ -500,7 +500,9 @@ However, Vim has a way to handle  this semi-automatically,  which is to have a d
 
 ### Debug with GDB and DDD
 **GDB** and **DDD** are one of the most popular debugging tool in Linux/UNIX
+
 Default **GDB** and **DDD** commands are set in ~/.vimrc
+
 ```
 let GDB="gdb"
 let DDD="ddd"
