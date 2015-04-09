@@ -540,7 +540,6 @@ let Helgrind="valgrind --tool=helgrind"
 
 To temporarily change any of them for the current Vim session for example `:let Valgrind="[Your Choice]"`
 
-The following key only applies when the current buffer is a C/C++/Lex/Flex/Yacc/Bison file.
 Require *valgrind* installed on the system. If you want to use the Callgrind graph viewer *kcachegrind*, you need to install it.
 
 | Key    | Action(s)
