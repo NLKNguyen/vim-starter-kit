@@ -590,9 +590,13 @@ If you like to use DLang, remove or comment out that line in ~/.vimrc. Then, Vim
 ###Work with PlantUML
 Default PlantUML command is set in ~/.vimrc
 ```VimL
-let PlantUML="java jar ~/PlantUML/plantuml.jar"
+let PlantUML="plantuml"
 ```
-Change the path to *plantuml.jar* to your preferred location. Your system also needs to have Java installed.
+
+Where *plantuml* is an alias that is set in your ~/.bashrc as:
+```
+alias plantuml='java jar [path to your plantuml.jar]'
+```
 
 | Keys            | Action(s)
 | ---:            | --------
