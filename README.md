@@ -1,3 +1,5 @@
+**Update May 21, 2015**: There are new tools being developed. After that, this project will be undergoing major revision. Check back in August.
+
 #Vim Starter Kit
 
 Get your Vim ready for real coding within a minute with Vim Starter Kit. Whether you just begin your Vim journey or has been into it for awhile, this starter kit can save you a great deal of time for configuration to set your Vim up as a real coding environment.
