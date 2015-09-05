@@ -1,4 +1,4 @@
-**Update May 21, 2015**: There are new tools being developed. After that, this project will be undergoing major revision. Check back in August.
+**Update September 4, 2015** This project is temporarily discontinued. It will be undergoing major revision at some point in the future.
 
 #Vim Starter Kit
 
